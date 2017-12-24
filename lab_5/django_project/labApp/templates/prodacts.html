@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Товары{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container">
+            <div class="page-header">
+                <h1>Товары</h1>
+            </div>
+            <ul class="list-group">
+                {% for prodact in prodacts_list %}
+                    <li>
+                        <div class="main_block_elem">
+                            <h4>{{ prodact.prodact_name }}</h4>
+                            Описание: {{ prodact.description }}<br>
+                            Цена: {{ prodact.price }}
+                    </div>
+                    </li>
+                {% empty %}
+                    <li>пустой список</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
